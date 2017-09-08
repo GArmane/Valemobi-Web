@@ -18,7 +18,7 @@ namespace ValemobiWeb.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = "Host=localhost;Port=5432;" +
-                "Database=ValemobiWebDB;Pooling=true;User Id=postgres;" +
+                "Database=valemobiweb-db;Pooling=true;User Id=valemobi;" +
                 "Password=s123";
             optionsBuilder
                 .UseNpgsql(connectionString);
