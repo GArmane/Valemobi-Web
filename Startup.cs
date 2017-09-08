@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ValemobiWeb.Data;
 
 namespace ValemobiWeb
 {
@@ -21,7 +23,19 @@ namespace ValemobiWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add MVC services.
             services.AddMvc();
+
+            // Add Entity Framework Core services.
+            // Get connection string.
+            var connectionString = Configuration
+                .GetSection("ConnectionStrings")
+                .GetValue<string>("ValemobiWebDB");
+            
+            // Register app context.
+            services.AddDbContext<Context>(options => options
+                .UseNpgsql(connectionString)
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
