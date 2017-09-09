@@ -8,3 +8,13 @@
 /mnt/Biblioteca/Setor Desenvolvimento/garmane/Testes Valemobi/Sistema Web/ValemobiWeb/obj/Debug/netcoreapp2.0/ValemobiWeb.AssemblyInfo.cs
 /mnt/Biblioteca/Setor Desenvolvimento/garmane/Testes Valemobi/Sistema Web/ValemobiWeb/obj/Debug/netcoreapp2.0/ValemobiWeb.dll
 /mnt/Biblioteca/Setor Desenvolvimento/garmane/Testes Valemobi/Sistema Web/ValemobiWeb/obj/Debug/netcoreapp2.0/ValemobiWeb.pdb
+D:\Setor Desenvolvimento\garmane\ValemobiWeb\bin\Debug\netcoreapp2.0\ValemobiWeb.deps.json
+D:\Setor Desenvolvimento\garmane\ValemobiWeb\bin\Debug\netcoreapp2.0\ValemobiWeb.runtimeconfig.json
+D:\Setor Desenvolvimento\garmane\ValemobiWeb\bin\Debug\netcoreapp2.0\ValemobiWeb.runtimeconfig.dev.json
+D:\Setor Desenvolvimento\garmane\ValemobiWeb\bin\Debug\netcoreapp2.0\ValemobiWeb.dll
+D:\Setor Desenvolvimento\garmane\ValemobiWeb\bin\Debug\netcoreapp2.0\ValemobiWeb.pdb
+D:\Setor Desenvolvimento\garmane\ValemobiWeb\obj\Debug\netcoreapp2.0\ValemobiWeb.csproj.CoreCompileInputs.cache
+D:\Setor Desenvolvimento\garmane\ValemobiWeb\obj\Debug\netcoreapp2.0\ValemobiWeb.AssemblyInfoInputs.cache
+D:\Setor Desenvolvimento\garmane\ValemobiWeb\obj\Debug\netcoreapp2.0\ValemobiWeb.AssemblyInfo.cs
+D:\Setor Desenvolvimento\garmane\ValemobiWeb\obj\Debug\netcoreapp2.0\ValemobiWeb.dll
+D:\Setor Desenvolvimento\garmane\ValemobiWeb\obj\Debug\netcoreapp2.0\ValemobiWeb.pdb

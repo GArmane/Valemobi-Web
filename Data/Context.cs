@@ -17,9 +17,10 @@ namespace ValemobiWeb.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Host=valemobiweb-db.postgres.database.azure.com;Port=5432;Database=valemobiweb-db;Pooling=true;User Id=valemobi@valemobiweb-db;Password=VM2017webapp";
+            var connectionString = "Database=valemobiweb-db;Host=valemobiweb-db.postgres.database.azure.com;User Id=valemobi@valemobiweb-db;Password=VM2017webapp";
             optionsBuilder
                 .UseNpgsql(connectionString);
         }
     }
 }
+
