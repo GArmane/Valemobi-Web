@@ -1,0 +1,73 @@
+@model ValemobiWeb.Models.Mercadoria
+
+@{
+    ViewData["Title"] = "Valemobi Web - Cadastro";
+}
+
+<h1>Cadastro de Mercadorias</h1>
+<br />
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h5>Dados</h5>
+    </div>
+    <div class="panel-body">
+        <form asp-action="Create">
+            <div class="form-horizontal">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
+                <div class="form-group">
+                    <label asp-for="Nome" class="col-md-2 control-label"></label>
+                    <div class="col-md-8">
+                        <input asp-for="Nome" class="form-control" />
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Tipo" class="col-md-2 control-label"></label>
+                    <div class="col-md-8">
+                        <input asp-for="Tipo" class="form-control" />
+                        <span asp-validation-for="Tipo" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Preco" class="col-md-2 control-label"></label>
+                    <div class="col-md-8">
+                        <input asp-for="Preco" class="form-control" />
+                        <span asp-validation-for="Preco" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Quantidade" class="col-md-2 control-label"></label>
+                    <div class="col-md-8">
+                        <input asp-for="Quantidade" class="form-control" />
+                        <span asp-validation-for="Quantidade" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Negocio" class="col-md-2 control-label"></label>
+                    <div class="col-md-8">
+                        <select asp-for="Negocio" asp-items="Html.GetEnumSelectList<TipoNegocio>()" class="form-control">
+                            <option selected="selected" value="">Seleciona uma categoria</option>
+                        </select>
+                        <span asp-validation-for="Negocio" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Cadastrar" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
