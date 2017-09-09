@@ -58,9 +58,24 @@ namespace ValemobiWeb.Controllers
         }
 
         [HttpGet]
-        public IActionResult Details(int id)
+        public async Task<IActionResult> Details(int? id)
         {
-            return NotFound();
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            var mercadoria = await this._context.Mercadorias
+                .FirstOrDefaultAsync(m => m.ID.Equals(id));
+            
+            if(mercadoria.Equals(null))
+            {
+                return NotFound();
+            }
+            else
+            {
+                return View(mercadoria);
+            }
         }
 
         [HttpGet]

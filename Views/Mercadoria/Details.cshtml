@@ -1,0 +1,45 @@
+@model ValemobiWeb.Models.Mercadoria
+
+@{
+    ViewData["Title"] = "Valemobi Web - Detalhes";
+}
+
+<h1>Detalhes de Mercadoria</h1>
+<br />
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h5>Dados</h5>
+    </div>
+
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item">
+                Código de ID: @Html.DisplayFor(model => model.ID)
+            </li>
+            <li class="list-group-item">
+                Nome: @Html.DisplayFor(model => model.Nome)
+            </li>
+            <li class="list-group-item">
+                Tipo: @Html.DisplayFor(model => model.Tipo)
+            </li>
+            <li class="list-group-item">
+                Preço: @Html.DisplayFor(model => model.Preco)
+            </li>
+            <li class="list-group-item">
+                Quantidade: @Html.DisplayFor(model => model.Quantidade)
+            </li>
+            <li class="list-group-item">
+                Categoria: @Html.DisplayFor(model => model.Negocio)
+            </li>
+        </ul>
+    </div>
+
+    <div class="panel-footer">
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <a asp-action="Index">
+                <button type="button" class="btn btn-default">Voltar</button>
+            </a>
+        </div>
+    </div>
+</div>
