@@ -12,9 +12,10 @@ using ValemobiWeb.Models;
 namespace ValemobiWeb.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20170909060055_MoedaDouble")]
+    partial class MoedaDouble
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,7 +33,7 @@ namespace ValemobiWeb.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<decimal>("Preco");
+                    b.Property<double>("Preco");
 
                     b.Property<int>("Quantidade");
 
