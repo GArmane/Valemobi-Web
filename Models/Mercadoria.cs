@@ -30,10 +30,8 @@ namespace ValemobiWeb.Models
         public int Quantidade { get; set; }
 
         [Required(ErrorMessage="Por favor, informe o preço da mercadoria.")]
-        [Range(0, Double.MaxValue, 
-        ErrorMessage="Preço deve ser maior ou igual a 0")]
         [DataType(DataType.Currency)]
-        public decimal Preco { get; set; }
+        public Decimal Preco { get; set; }
 
         [Required(ErrorMessage="Por favor, informe a categoria da mercadoria.")]
         [DisplayName("Categoria")]

@@ -1,0 +1,58 @@
+@model ValemobiWeb.Models.Mercadoria
+
+@{
+    ViewData["Title"] = "Valemobi Web - Remoção";
+    ViewData["ModelID"] = Model.ID;
+}
+
+<h1>Detalhes de Mercadoria</h1>
+<br />
+
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h5>Dados</h5>
+    </div>
+
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item">
+                Código de ID: @Html.DisplayFor(model => model.ID)
+            </li>
+            <li class="list-group-item">
+                Nome: @Html.DisplayFor(model => model.Nome)
+            </li>
+            <li class="list-group-item">
+                Tipo: @Html.DisplayFor(model => model.Tipo)
+            </li>
+            <li class="list-group-item">
+                Preço: @Html.DisplayFor(model => model.Preco)
+            </li>
+            <li class="list-group-item">
+                Quantidade: @Html.DisplayFor(model => model.Quantidade)
+            </li>
+            <li class="list-group-item">
+                Categoria: @Html.DisplayFor(model => model.Negocio)
+            </li>
+        </ul>
+    </div>
+
+    <div class="panel-footer">
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <input type="hidden" asp-for="ID" />
+            <form asp-controller="Mercadoria" asp-action="Delete" method="post">
+                <div class="form-actions no-color">
+                    <label>Deseja deletar este item?</label>
+                    <br />
+                    <input type="submit" value="Deletar" 
+                        class="btn btn-default" />
+                    <a asp-action="Index">
+                    <button type="button" class="btn btn-default">
+                        Voltar
+                    </button>
+                    </a>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>

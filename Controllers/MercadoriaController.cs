@@ -30,10 +30,7 @@ namespace ValemobiWeb.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(
-            [Bind("ID,Tipo,Nome,Quantidade,Preco,Negocio")] 
-            Mercadoria mercadoria
-        )
+        public async Task<IActionResult> Create(Mercadoria mercadoria)
         {
             try
             {
@@ -66,7 +63,7 @@ namespace ValemobiWeb.Controllers
             }
 
             var mercadoria = await this._context.Mercadorias
-                .FirstOrDefaultAsync(m => m.ID.Equals(id));
+                .AsNoTracking().FirstOrDefaultAsync(m => m.ID.Equals(id));
             
             if(mercadoria.Equals(null))
             {
@@ -79,9 +76,42 @@ namespace ValemobiWeb.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int? id)
         {
-            return NotFound();
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            var mercadoria = await this._context.Mercadorias
+                .FirstOrDefaultAsync(m => m.ID.Equals(id));
+            
+            if(mercadoria.Equals(null))
+            {
+                return NotFound();
+            }
+            else
+            {
+                return View(mercadoria);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var mercadoria = await this._context.Mercadorias
+                .FirstOrDefaultAsync(m => m.ID.Equals(id));
+            
+            if(mercadoria.Equals(null))
+            {
+                return NotFound();
+            }
+            else
+            {
+                this._context.Remove(mercadoria);
+                await this._context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
         }
     }
 }
