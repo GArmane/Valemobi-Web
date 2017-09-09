@@ -7,11 +7,7 @@
 <h1>Índice de Mercadorias</h1>
 <br />
 
-<p>
-    <a asp-action="Create">Cadastrar mercadoria</a>
-</p>
-
-<div class="panel panel-default">
+<div class="panel panel-info">
     <div class="panel-heading">
         <div class="row">
             <div class="col-md-1">
@@ -70,5 +66,12 @@
     </div>
 
     <div class="panel-footer">
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <a asp-action="Create">
+                <button type="button" class="btn btn-default">
+                    Cadastrar mercadoria
+                </button>
+            </a>
+        </div>
     </div>
 </div>
