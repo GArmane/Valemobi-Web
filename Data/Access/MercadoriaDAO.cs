@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using ValemobiWeb.Models;
 
 namespace ValemobiWeb.Data.Access
@@ -16,12 +17,12 @@ namespace ValemobiWeb.Data.Access
 
         public List<Mercadoria> GetList()
         {
-            return this._context.Mercadorias.ToList();
+            return this._context.Mercadorias.AsNoTracking().ToList();
         }
 
         public Mercadoria GetByID(int id)
         {
-            return this._context.Mercadorias.FirstOrDefault(
+            return this._context.Mercadorias.AsNoTracking().FirstOrDefault(
                 m => m.ID.Equals(id)
             );
         }
