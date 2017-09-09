@@ -29,7 +29,7 @@ namespace ValemobiWeb
             // Add Entity Framework Core services.
             // Get connection string.
             var connectionString = Configuration
-                .GetSection("ConnectionStrings")
+                .GetSection("WebConnectionStrings")
                 .GetValue<string>("ValemobiWebDB");
             
             // Register app context.
