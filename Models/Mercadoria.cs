@@ -29,9 +29,11 @@ namespace ValemobiWeb.Models
         ErrorMessage = "Quantidade deve ser maior ou igual a 1.")]
         public int Quantidade { get; set; }
 
-        [Required(ErrorMessage="Por favor, informe o preço da mercadoria.")]
+        [Required(ErrorMessage="Por favor, informe um preço de mercadoria.")]
+        [DisplayFormat(ApplyFormatInEditMode = true, 
+        DataFormatString = "{0:C}")]
         [DataType(DataType.Currency)]
-        public Decimal Preco { get; set; }
+        public decimal Preco { get; set; }
 
         [Required(ErrorMessage="Por favor, informe a categoria da mercadoria.")]
         [DisplayName("Categoria")]

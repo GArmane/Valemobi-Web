@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -30,7 +31,7 @@ namespace ValemobiWeb.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Mercadoria mercadoria)
+        public async Task<IActionResult> Create([FromForm] Mercadoria mercadoria)
         {
             try
             {
