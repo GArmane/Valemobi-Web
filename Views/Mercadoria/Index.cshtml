@@ -1,0 +1,74 @@
+@model ValemobiWeb.Models.MercadoriaViewModel
+
+@{
+    ViewData["Title"] = "Mercadorias";
+}
+
+<h1>Índice de Mercadorias</h1>
+<br />
+
+<p>
+    <a asp-action="Create">Cadastrar mercadoria</a>
+</p>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-1">
+                Código ID
+            </div>
+            <div class="col-md-2">
+                Tipo
+            </div>
+            <div class="col-md-2">
+                Nome
+            </div>
+            <div class="col-md-2">
+                Categoria
+            </div>
+            <div class="col-md-1">
+                Preco
+            </div>
+            <div class="col-md-1">
+                Quantidade
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-body">
+        @foreach(var item in Model.Itens)
+        {
+            <div class="row">
+                <div class="col-md-1">
+                    @item.ID
+                </div>
+                <div class="col-md-2">
+                    @item.Tipo
+                </div>
+                <div class="col-md-2">
+                    @item.Nome
+                </div>
+                <div class="col-md-2">
+                    @item.Negocio
+                </div>
+                <div class="col-md-1">
+                    @item.Preco
+                </div>
+                <div class="col-md-1">
+                    @item.Quantidade
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-1">
+                    <a asp-action="Details" asp-route-id="@item.ID">Detalhes</a>
+                </div>
+                <div class="col-md-1">
+                    <a asp-action="Delete" asp-route-id="@item.ID">Remover</a>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="panel-footer">
+    </div>
+</div>
